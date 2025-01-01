@@ -86,6 +86,55 @@ usersRouter.get("/:id", authMW, async (req, res) => {
     res.json(user)
 
 })
+usersRouter.put("/:id", authMW, async (req, res) => {
+
+    if (req.user._id !== req.params.id) {
+        res.status(400).send("you need to be the Registered User to make this request")
+        return
+    }
+
+    const { error } = validateUser(req.body)
+    if (error) {
+        res.status(400).send(error.details[0].message)
+        return
+    }
+    const user = await User.findByIdAndUpdate(req.params.id, req.body, {
+        new: true,
+
+    }).select('-password')
+    if (!user) {
+        res.status(400).send("user not in database")
+        return
+    }
+
+    res.json(user)
+})
+
+usersRouter.patch("/:id", authMW, async (req, res) => {
+
+    if (req.user._id !== req.params.id) {
+        res.status(400).send("you need to be the Registered User to make this request")
+        return
+    }
+    let userTofind = await User.findById(req.user._id)
+    const updatedIsBusiness = userTofind.isBusiness === true ? false : true
+
+
+    let user = await User.findByIdAndUpdate(req.params.id, { isBusiness: updatedIsBusiness }, {
+        new: true,
+
+    }).select('-password')
+    if (!user) {
+        res.status(400).send("user not in database")
+        return
+    }
+
+    res.json(user)
+})
+
+
+
+
 
 
 

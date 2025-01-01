@@ -36,10 +36,41 @@ POST  {{global}}/users/login
 Content-Type: application/json
 
 {
-  "email": "Admin@email.com",
+  "email": "el11lv222i11111111111232s@email.com",
   "password": "Abc!123Abc"
 }
 
 ###
-GET {{global}}/users/
-x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc1MWFlNzIwMTlkNGZmNDZhOWE1YWIiLCJpc0J1c2luZXNzIjpmYWxzZSwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNzM1NzI3ODY3fQ.rlPjMPq_yEW_C_Ng3jPYvBFD9kU4-xGAPhn1dIoO6Xs
+GET {{global}}/users/6775055857a0b219ec3b74ab
+x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc1MWFlNzIwMTlkNGZmNDZhOWE1YWIiLCJpc0J1c2luZXNzIjpmYWxzZSwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNzM1NzI5ODA3fQ.Z_YEw8a_YUxu6xPf6VWgDsoeuuImAW840N32pyXBor0
+###
+PUT {{global}}/users/6775055857a0b219ec3b74ab
+Content-Type: application/json
+x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc1MDU1ODU3YTBiMjE5ZWMzYjc0YWIiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM1NzMxNDE2fQ.z3m_rvpwqnDXn2Tbrbw_xmG8E88G2nF9pWbCZBtlOxs
+
+{
+  "name": {
+    "first": "Ell new",
+    "middle": "",
+    "last": "Vis new"
+  },
+  "phone": "0512345567",
+  "email": "NE",
+  "password": "Abc!123Abc",
+  "image": {
+    "url": "",
+    "alt": ""
+  },
+  "address": {
+    "state": "IL",
+    "country": "Israel",
+    "city": "Arad",
+    "street": "Shoham",
+    "houseNumber": 5,
+    "zip": 86
+  },
+  "isBusiness": true
+}
+###
+PATCH  {{global}}/users/6775055857a0b219ec3b74ab
+x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc1MDU1ODU3YTBiMjE5ZWMzYjc0YWIiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM1NzMxNDE2fQ.z3m_rvpwqnDXn2Tbrbw_xmG8E88G2nF9pWbCZBtlOxs
