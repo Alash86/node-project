@@ -1,0 +1,45 @@
+@global = http://localhost:8009
+
+POST  {{global}}/users/
+Content-Type: application/json
+
+
+{
+  "name": {
+    "first": "Ell22",
+    "middle": "",
+    "last": "Vi22s"
+  },
+  "phone": "0512345567",
+  "email": "Admin@email.com",
+  "password": "Abc!123Abc",
+  "image": {
+    "url": "",
+    "alt": ""
+  },
+  "address": {
+    "state": "IL",
+    "country": "Israel",
+    "city": "Arad",
+    "street": "Shoham",
+    "houseNumber": 5,
+    "zip": 5
+  },
+  "isBusiness": false,
+  "isAdmin":true
+}
+
+
+###
+
+POST  {{global}}/users/login
+Content-Type: application/json
+
+{
+  "email": "Admin@email.com",
+  "password": "Abc!123Abc"
+}
+
+###
+GET {{global}}/users/
+x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc1MWFlNzIwMTlkNGZmNDZhOWE1YWIiLCJpc0J1c2luZXNzIjpmYWxzZSwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNzM1NzI3ODY3fQ.rlPjMPq_yEW_C_Ng3jPYvBFD9kU4-xGAPhn1dIoO6Xs
