@@ -43,12 +43,12 @@ const usersSchema = new mongoose.Schema({
 
         url: {
             type: String,
-            default: ""
+            default: "https://cdn.pixabay.com/photo/2016/04/01/10/11/avatar-1299805_960_720.png"
         },
         alt: {
             type: String,
             maxlength: 256,
-            default: ""
+            default: "User Profile Image"
         }
     },
     address: {

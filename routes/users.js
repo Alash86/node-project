@@ -132,6 +132,23 @@ usersRouter.patch("/:id", authMW, async (req, res) => {
     res.json(user)
 })
 
+usersRouter.delete("/:id", authMW, async (req, res) => {
+    const isAdmin = req.user.isAdmin
+
+    if (!isAdmin && req.user._id !== req.params.id) {
+        res.status(400).send("you need to be the Registered User or Admin to make this request")
+        return
+    }
+    const user = await User.findOneAndDelete({ _id: req.params.id })
+    if (!user) {
+        res.status(400).send("user not in database")
+        return
+    }
+    res.json(user)
+
+})
+
+
 
 
 

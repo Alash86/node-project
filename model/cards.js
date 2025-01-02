@@ -1,5 +1,6 @@
 const Joi = require("joi")
 const mongoose = require("mongoose")
+const _ = require("lodash")
 
 const cardsSchema = new mongoose.Schema({
 
@@ -79,6 +80,13 @@ const cardsSchema = new mongoose.Schema({
 
         },
     },
+    bizNumber: {
+        type: Number,
+        required: true,
+        min: 100,
+        max: 9_999_999_999,
+        unique: true,
+    },
     likes: {
         type: Array,
         default: []
@@ -114,12 +122,21 @@ function validateCard(card) {
             houseNumber: Joi.number().min(1).required(),
             zip: Joi.number(),
         }),
-        isBusiness: Joi.boolean().required()
+
 
 
     })
     return Schema.validate(card)
 }
 
+async function generateBizNum() {
+    while (true) {
+        const random = _.random(100, 9_999_999_999)
+        const card = await Card.findOne({ bizNumber: random })
+        if (!card) {
+            return random
+        }
+    }
+}
 
-module.exports = { Card, validateCard }
+module.exports = { Card, validateCard, generateBizNum }
