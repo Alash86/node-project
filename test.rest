@@ -36,7 +36,7 @@ POST  {{global}}/users/login
 Content-Type: application/json
 
 {
-  "email": "el11lv222i1111111s@email.com",
+  "email": "Admin@email.com",
   "password": "Abc!123Abc"
 }
 
@@ -89,8 +89,8 @@ x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc1MDU1ODU3YTBiMj
 
 {
   
-  "title": "a wonderful new card22",
-  "subtitle": "a test value for this card22",
+  "title": "aaaaaaaaa",
+  "subtitle": "aaaaaaaaaaa",
   "description": "a test value for new card\na test value for new card\n",
   "phone": "012-3211234",
   "email": "qwe@gmail.com",
@@ -149,4 +149,10 @@ x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc1MDU1ODU3YTBiMj
 
 ###
 PATCH {{global}}/cards/677662f9386288dadc184d07
-x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc1MDU1ODU3YTBiMjE5ZWMzYjc0YWIiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM1NzMxNDE2fQ.z3m_rvpwqnDXn2Tbrbw_xmG8E88G2nF9pWbCZBtlOxs
+x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc1MDUyMWRiZjY2YTY4Mzg4Yzk4ZmQiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM1ODA3NTM0fQ.nCuu3MBCE_29GZc3U4_2J8MJs8OI0m0KW35K0yUt1IE
+
+
+### 
+DELETE {{global}}/cards/677680990e68afb1b5353dad
+x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc1MWFlNzIwMTlkNGZmNDZhOWE1YWIiLCJpc0J1c2luZXNzIjpmYWxzZSwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNzM1ODE5OTg3fQ.VuFG2m5W2ZmOW1m0AWx0HZxM9-g1N__O-LB_KcKDKZs
+

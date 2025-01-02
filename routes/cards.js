@@ -96,11 +96,33 @@ cardsRouter.patch("/:id", authMW, async (req, res) => {
 
     const IdInArray = card.likes.find((id) => id == req.user._id)
     if (!IdInArray) {
-        card.likes.push(req.user._id)
-        res.json(card)
+        await card.likes.push(req.user._id)
+    }
+    else {
+        card.likes = card.likes.filter((id) => id !== req.user._id)
+    }
+    await card.save()
+    res.json(card)
+
+})
+
+cardsRouter.delete("/:id", authMW, async (req, res) => {
+
+    const isAdmin = req.user.isAdmin
+    const card = await Card.findById(req.params.id)
+
+    if (!isAdmin && card.user_id !== req.user._id) {
+        res.status(400).send("you need to be the user who created this or Admin to delete this card")
         return
     }
-    card.likes.filter((id) => id !== req.user._id)
+
+    if (!card) {
+        res.status(400).send("Card Not found in Database to Delete")
+        return
+    }
+
+    await Card.deleteOne({ _id: req.params.id })
+
     res.json(card)
 
 })
