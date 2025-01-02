@@ -88,7 +88,7 @@ cardsRouter.put("/:id", authMW, async (req, res) => {
 cardsRouter.patch("/:id", authMW, async (req, res) => {
 
 
-    const card = await Card.findOne({ _id: req.params.id })
+    let card = await Card.findOne({ _id: req.params.id })
     if (!card) {
         res.status(400).send("Card Not Found in Database ")
         return
@@ -97,10 +97,10 @@ cardsRouter.patch("/:id", authMW, async (req, res) => {
     const IdInArray = card.likes.find((id) => id == req.user._id)
     if (!IdInArray) {
         card.likes.push(req.user._id)
+        res.json(card)
         return
     }
-    else { card.likes.filter((id) => id !== req.user._id) }
-
+    card.likes.filter((id) => id !== req.user._id)
     res.json(card)
 
 })
