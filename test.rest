@@ -145,3 +145,8 @@ x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc1MDU1ODU3YTBiMj
   }
 
 }
+
+
+###
+PATCH {{global}}/cards/677662f9386288dadc184d07
+x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc1MDU1ODU3YTBiMjE5ZWMzYjc0YWIiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM1NzMxNDE2fQ.z3m_rvpwqnDXn2Tbrbw_xmG8E88G2nF9pWbCZBtlOxs
