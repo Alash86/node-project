@@ -11,7 +11,7 @@ export const initialusers = [
     },
     isBusiness: true,
     isAdmin: true,
-    phone: 12345,
+    phone: 123456789,
     email: "nick@gmail.com",
     password: "nick1234",
     address: {
@@ -19,8 +19,8 @@ export const initialusers = [
       country: "Israel",
       city: "Ashdod",
       street: "Ashdod city",
-      houseNumber: 130,
-      zip: 12345,
+      houseNumber: 10,
+      zip: 12,
     },
   },
   {
@@ -35,7 +35,7 @@ export const initialusers = [
     },
     isBusiness: true,
     isAdmin: false,
-    phone: 33345,
+    phone: 3334544789,
     email: "bob@gmail.com",
     password: "bob1234",
     address: {
@@ -43,8 +43,8 @@ export const initialusers = [
       country: "USA",
       city: "LA",
       street: "LA city",
-      houseNumber: 330,
-      zip: 12345,
+      houseNumber: 30,
+      zip: 11,
     },
   },
   {
@@ -59,7 +59,7 @@ export const initialusers = [
     },
     isBusiness: false,
     isAdmin: false,
-    phone: 45684,
+    phone: 525211111,
     email: "jimmy@gmail.com",
     password: "jimmy1234",
     address: {
@@ -67,8 +67,8 @@ export const initialusers = [
       country: "UK",
       city: "London",
       street: "London city",
-      houseNumber: 45123,
-      zip: 12345,
+      houseNumber: 45,
+      zip: 12,
     },
   },
 ];

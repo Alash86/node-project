@@ -54,7 +54,6 @@ const usersSchema = new mongoose.Schema({
     address: {
         state: {
             type: String,
-            minlength: 2,
             maxlength: 256
         },
         country: {
