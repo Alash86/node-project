@@ -23,10 +23,10 @@ Content-Type: application/json
     "city": "Arad",
     "street": "Shoham",
     "houseNumber": 5,
-    "zip": 5
+    "zip": "2151510"
   },
-  "isBusiness": false,
-  "isAdmin":true
+  "isBusiness": false
+
 }
 
 
@@ -41,44 +41,41 @@ Content-Type: application/json
 }
 
 ###
-GET {{global}}/users/6775055857a0b219ec3b74ab
-x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc1MWFlNzIwMTlkNGZmNDZhOWE1YWIiLCJpc0J1c2luZXNzIjpmYWxzZSwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNzM1NzI5ODA3fQ.Z_YEw8a_YUxu6xPf6VWgDsoeuuImAW840N32pyXBor0
+GET {{global}}/users/6777a44e279c40ad92792f81
+x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc3YTQ0ZTI3OWM0MGFkOTI3OTJmODAiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MzU4OTQ1MDh9.2NnTNZlSJEQUckIIynBO7er4eZfrW3G_w85a65w8AJ8
 ###
-PUT {{global}}/users/6775055857a0b219ec3b74ab
+PUT {{global}}/users/6777a44e279c40ad92792f80
 Content-Type: application/json
-x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc1MDU1ODU3YTBiMjE5ZWMzYjc0YWIiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM1NzMxNDE2fQ.z3m_rvpwqnDXn2Tbrbw_xmG8E88G2nF9pWbCZBtlOxs
+x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc3YTQ0ZTI3OWM0MGFkOTI3OTJmODAiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MzU4OTQ1ODl9.C-FDkWTPXqjANdvSrKz6IYa9dsIrPoz9uL3OzaJ8VHU
 
 {
   "name": {
-    "first": "Ell new",
+    "first": "Ell new222",
     "middle": "",
-    "last": "Vis new"
+    "last": "Vis new2222"
   },
   "phone": "0512345567",
-  "email": "NE",
-  "password": "Abc!123Abc",
   "image": {
     "url": "",
     "alt": ""
   },
   "address": {
-    "state": "IL",
+    "state": "IL2222",
     "country": "Israel",
     "city": "Arad",
     "street": "Shoham",
     "houseNumber": 5,
-    "zip": 86
-  },
-  "isBusiness": true
+    "zip": "86444"
+  }
 }
 ###
-PATCH  {{global}}/users/6775055857a0b219ec3b74ab
-x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc1MDU1ODU3YTBiMjE5ZWMzYjc0YWIiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM1NzMxNDE2fQ.z3m_rvpwqnDXn2Tbrbw_xmG8E88G2nF9pWbCZBtlOxs
+PATCH  {{global}}/users/6777a44e279c40ad92792f80
+x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc3YTQ0ZTI3OWM0MGFkOTI3OTJmODAiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MzU4OTQ1ODl9.C-FDkWTPXqjANdvSrKz6IYa9dsIrPoz9uL3OzaJ8VHU
 
 
 ###
-DELETE {{global}}/users/67750521dbf66a68388c98fd
-x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc1MDUyMWRiZjY2YTY4Mzg4Yzk4ZmQiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM1ODA3NTM0fQ.nCuu3MBCE_29GZc3U4_2J8MJs8OI0m0KW35K0yUt1IE
+DELETE {{global}}/users/6777a871d4722de73cd1a995
+x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc3YTg3MWQ0NzIyZGU3M2NkMWE5OTUiLCJpc0J1c2luZXNzIjpmYWxzZSwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTczNTg5NTE3NX0.5fUWKls45bOloaauKZImKtyvH5NHhJaR22MQvxP4nsI
 
 
 ###

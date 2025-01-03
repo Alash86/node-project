@@ -6,6 +6,7 @@ const PORT = 8009
 const express = require("express")
 const cors = require("cors")
 const mongoose = require("mongoose")
+const bcrypt = require("bcrypt")
 
 const { Card } = require("./model/cards")
 const { User } = require("./model/users")
@@ -37,11 +38,12 @@ async function connect() {
                         return;
                     }
                     const newUser = new User(user);
+                    newUser.password = await bcrypt.hash(user.password, 12)
                     await newUser.save();
                 });
                 initialCards.forEach(async (card) => {
                     const cardsLength = await Card.find().countDocuments();
-                    if (cardsLength > 3) {
+                    if (cardsLength >= 3) {
                         return;
                     }
                     const newCard = new Card(card);
