@@ -81,7 +81,7 @@ const usersSchema = new mongoose.Schema({
             required: true
         },
         zip: {
-            type: Number,
+            type: String,
             min: 2,
             max: 256,
             required: true
@@ -123,10 +123,10 @@ function validateUser(user) {
             city: Joi.string().min(2).max(256).required(),
             street: Joi.string().min(2).max(256).required(),
             houseNumber: Joi.number().min(2).max(256).required(),
-            zip: Joi.number().min(2).max(256).required(),
+            zip: Joi.string().min(2).max(256).required(),
         }),
         isBusiness: Joi.boolean().required(),
-        isAdmin: Joi.boolean()
+
 
 
     })
@@ -143,5 +143,35 @@ function validateLogin(credentials) {
 
 }
 
+function validatEdit(user) {
+    const Schema = Joi.object({
+        name: Joi.object({
+            first: Joi.string().min(2).max(256).required(),
+            middle: Joi.string().allow("").min(2).max(256),
+            last: Joi.string().min(2).max(256).required(),
 
-module.exports = { User, validateUser, validateLogin }
+        }),
+        phone: Joi.string().min(9).max(11).required(),
+        image: Joi.object({
+            url: Joi.string().allow("").min(14),
+            alt: Joi.string().allow("").min(2).max(256),
+        }),
+        address: Joi.object({
+            state: Joi.string().allow("").min(2).max(256),
+            country: Joi.string().min(2).max(256).required(),
+            city: Joi.string().min(2).max(256).required(),
+            street: Joi.string().min(2).max(256).required(),
+            houseNumber: Joi.number().min(2).max(256).required(),
+            zip: Joi.string().min(2).max(256).required(),
+        }),
+
+
+
+    })
+    return Schema.validate(user)
+}
+
+
+
+
+module.exports = { User, validateUser, validateLogin, validatEdit }

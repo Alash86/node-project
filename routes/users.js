@@ -6,7 +6,7 @@ const config = require("../config/config");
 const authMW = require("../middleware/auth")
 
 const usersRouter = express.Router()
-const { User, validateUser, validateLogin } = require("../model/users");
+const { User, validateUser, validateLogin, validatEdit } = require("../model/users");
 const { array } = require("joi");
 
 usersRouter.post("/", async (req, res) => {
@@ -93,7 +93,7 @@ usersRouter.put("/:id", authMW, async (req, res) => {
         return
     }
 
-    const { error } = validateUser(req.body)
+    const { error } = validatEdit(req.body)
     if (error) {
         res.status(400).send(error.details[0].message)
         return

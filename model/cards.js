@@ -76,7 +76,7 @@ const cardsSchema = new mongoose.Schema({
             required: true
         },
         zip: {
-            type: Number,
+            type: String,
 
         },
     },
@@ -120,7 +120,7 @@ function validateCard(card) {
             city: Joi.string().required(),
             street: Joi.string().required(),
             houseNumber: Joi.number().min(1).required(),
-            zip: Joi.number(),
+            zip: Joi.string(),
         }),
 
 

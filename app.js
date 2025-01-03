@@ -1,16 +1,19 @@
 
-
 require("dotenv/config");
+
 const PORT = 8009
 
 const express = require("express")
+const cors = require("cors")
 const mongoose = require("mongoose")
 
 const { Card } = require("./model/cards")
 const { User } = require("./model/users")
 const { initialusers } = require("./seedData/initialusers")
 const { initialCards } = require("./seedData/initialCards")
+
 const app = express()
+app.use(cors())
 app.use(express.json())
 app.use(require("morgan")("dev"))
 
