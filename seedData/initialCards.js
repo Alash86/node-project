@@ -18,7 +18,7 @@ export const initialCards = [
       houseNumber: 33,
       zip: 12,
     },
-    bizNumber: 123347,
+    bizNumber: 1000001,
     userId: "676844a3eaa5432d476822a5",
   },
   {
@@ -40,7 +40,7 @@ export const initialCards = [
       houseNumber: 31,
       zip: 18,
     },
-    bizNumber: 1233321,
+    bizNumber: 1000002,
     userId: "676844a3eaa5432d476822a5",
   },
   {
@@ -62,7 +62,7 @@ export const initialCards = [
       houseNumber: 30,
       zip: 17,
     },
-    bizNumber: 123340,
+    bizNumber: 1000003,
     userId: "676844a3eaa5432d476822a5",
   },
 ];

@@ -83,8 +83,8 @@ const cardsSchema = new mongoose.Schema({
     bizNumber: {
         type: Number,
         required: true,
-        min: 100,
-        max: 9_999_999_999,
+        min: 1000000,
+        max: 9999999,
         unique: true,
     },
     likes: {
@@ -131,7 +131,7 @@ function validateCard(card) {
 
 async function generateBizNum() {
     while (true) {
-        const random = _.random(100, 9_999_999_999)
+        const random = _.random(1000000, 9999999)
         const card = await Card.findOne({ bizNumber: random })
         if (!card) {
             return random

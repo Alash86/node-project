@@ -127,5 +127,31 @@ cardsRouter.delete("/:id", authMW, async (req, res) => {
 
 })
 
+cardsRouter.patch("/biz/:id", authMW, async (req, res) => {
+
+    const isAdmin = req.user.isAdmin
+    const card = await Card.findById(req.params.id)
+
+    if (!isAdmin) {
+        res.status(400).send("you need to be  Admin to edit card biz number ")
+        return
+    }
+
+    if (!card) {
+        res.status(400).send("Card Not found in Database to Delete")
+        return
+    }
+    if (card.bizNumber === req.body.bizNumber) {
+        res.status(400).send("card biz number already taken")
+        return
+    }
+
+    card.bizNumber = req.body.bizNumber
+
+    await card.save()
+    res.json(card)
+
+})
+
 
 module.exports = cardsRouter
