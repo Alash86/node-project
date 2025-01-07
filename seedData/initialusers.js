@@ -13,7 +13,7 @@ export const initialusers = [
     isAdmin: true,
     phone: 123456789,
     email: "nick@gmail.com",
-    password: "nick1234",
+    password: "Nick123456!",
     address: {
       state: "",
       country: "Israel",
@@ -37,7 +37,7 @@ export const initialusers = [
     isAdmin: false,
     phone: 3334544789,
     email: "bob@gmail.com",
-    password: "bob1234",
+    password: "Bob123455!",
     address: {
       state: "",
       country: "USA",
@@ -61,7 +61,7 @@ export const initialusers = [
     isAdmin: false,
     phone: 525211111,
     email: "jimmy@gmail.com",
-    password: "jimmy1234",
+    password: "Jimmy1234!",
     address: {
       state: "",
       country: "UK",

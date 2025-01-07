@@ -26,9 +26,15 @@ usersRouter.post("/", async (req, res) => {
     //process
     user = await new User(req.body)
     user.password = await bcrypt.hash(user.password, 12)
-    await user.save()
-    //response
-    res.json(_.pick(user, ["name", "email", "_id"]))
+    try {
+        await user.save()
+        //response
+        res.json(_.pick(user, ["name", "email", "_id"]))
+    } catch (error) {
+        console.log("error occured:", error.message)
+        res.status(400).send({ message: "An error occurred while processing this request", error: error.message })
+    }
+
 })
 
 usersRouter.post("/login", async (req, res) => {
@@ -98,16 +104,22 @@ usersRouter.put("/:id", authMW, async (req, res) => {
         res.status(400).send(error.details[0].message)
         return
     }
-    const user = await User.findByIdAndUpdate(req.params.id, req.body, {
-        new: true,
+    try {
+        const user = await User.findByIdAndUpdate(req.params.id, req.body, {
+            new: true,
 
-    }).select('-password')
-    if (!user) {
-        res.status(400).send("user not in database")
-        return
+        }).select('-password')
+        if (!user) {
+            res.status(400).send("user not in database")
+            return
+        }
+
+        res.json(user)
+    } catch (error) {
+        console.log("error occured:", error.message)
+        res.status(400).send({ message: "An error occurred while processing this request", error: error.message })
     }
 
-    res.json(user)
 })
 
 usersRouter.patch("/:id", authMW, async (req, res) => {
@@ -119,17 +131,22 @@ usersRouter.patch("/:id", authMW, async (req, res) => {
     let userTofind = await User.findById(req.user._id)
     const updatedIsBusiness = userTofind.isBusiness === true ? false : true
 
+    try {
+        let user = await User.findByIdAndUpdate(req.params.id, { isBusiness: updatedIsBusiness }, {
+            new: true,
 
-    let user = await User.findByIdAndUpdate(req.params.id, { isBusiness: updatedIsBusiness }, {
-        new: true,
+        }).select('-password')
+        if (!user) {
+            res.status(400).send("user not in database")
+            return
+        }
 
-    }).select('-password')
-    if (!user) {
-        res.status(400).send("user not in database")
-        return
+        res.json(user)
+    } catch (error) {
+        console.log("error occured:", error.message)
+        res.status(400).send({ message: "An error occurred while processing this request", error: error.message })
     }
 
-    res.json(user)
 })
 
 usersRouter.delete("/:id", authMW, async (req, res) => {
@@ -139,12 +156,18 @@ usersRouter.delete("/:id", authMW, async (req, res) => {
         res.status(400).send("you need to be the Registered User or Admin to make this request")
         return
     }
-    const user = await User.findOneAndDelete({ _id: req.params.id })
-    if (!user) {
-        res.status(400).send("user not in database")
-        return
+    try {
+        const user = await User.findOneAndDelete({ _id: req.params.id })
+        if (!user) {
+            res.status(400).send("user not in database")
+            return
+        }
+        res.json(user)
+    } catch (error) {
+        console.log("error occured:", error.message)
+        res.status(400).send({ message: "An error occurred while processing this request", error: error.message })
     }
-    res.json(user)
+
 
 })
 

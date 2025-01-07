@@ -1,7 +1,7 @@
 
 require("dotenv/config");
 
-const PORT = 8009
+const PORT = 3000
 
 const express = require("express")
 const cors = require("cors")

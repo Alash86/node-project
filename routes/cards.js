@@ -54,14 +54,22 @@ cardsRouter.post("/", authMW, async (req, res) => {
     }
 
     //process
-    const card = await new Card({
-        ...req.body,
-        user_id: req.user._id,
-        bizNumber: await generateBizNum()
-    })
-    await card.save()
-    //response
-    res.json(card)
+    try {
+        const card = await new Card({
+            ...req.body,
+            user_id: req.user._id,
+            bizNumber: await generateBizNum()
+        })
+        await card.save()
+        //response
+        res.json(card)
+
+    } catch (error) {
+        console.log("error occured:", error.message)
+        res.status(400).send({ message: "An error occurred while processing this request", error: error.message })
+    }
+
+
 
 })
 
@@ -72,16 +80,22 @@ cardsRouter.put("/:id", authMW, async (req, res) => {
         res.status(400).send(error.details[0].message)
         return
     }
+    try {
+        const card = await Card.findOneAndUpdate({ _id: req.params.id, user_id: req.user._id }, req.body, {
+            new: true,
 
-    const card = await Card.findOneAndUpdate({ _id: req.params.id, user_id: req.user._id }, req.body, {
-        new: true,
+        })
+        if (!card) {
+            res.status(400).send("Card Not Found in Database or User Not authorized")
+            return
+        }
+        res.json(card)
 
-    })
-    if (!card) {
-        res.status(400).send("Card Not Found in Database or User Not authorized")
-        return
+    } catch (error) {
+        console.log("error occured:", error.message)
+        res.status(400).send({ message: "An error occurred while processing this request", error: error.message })
     }
-    res.json(card)
+
 
 })
 
@@ -101,8 +115,14 @@ cardsRouter.patch("/:id", authMW, async (req, res) => {
     else {
         card.likes = card.likes.filter((id) => id !== req.user._id)
     }
-    await card.save()
-    res.json(card)
+    try {
+        await card.save()
+        res.json(card)
+    } catch (error) {
+        console.log("error occured:", error.message)
+        res.status(400).send({ message: "An error occurred while processing this request", error: error.message })
+    }
+
 
 })
 
@@ -120,10 +140,13 @@ cardsRouter.delete("/:id", authMW, async (req, res) => {
         res.status(400).send("Card Not found in Database to Delete")
         return
     }
-
-    await Card.deleteOne({ _id: req.params.id })
-
-    res.json(card)
+    try {
+        await Card.deleteOne({ _id: req.params.id })
+        res.json(card)
+    } catch (error) {
+        console.log("error occured:", error.message)
+        res.status(400).send({ message: "An error occurred while processing this request", error: error.message })
+    }
 
 })
 
@@ -147,10 +170,14 @@ cardsRouter.patch("/biz/:id", authMW, async (req, res) => {
     }
 
     card.bizNumber = req.body.bizNumber
+    try {
 
-    await card.save()
-    res.json(card)
-
+        await card.save()
+        res.json(card)
+    } catch (error) {
+        console.log("error occured:", error.message)
+        res.status(400).send({ message: "An error occurred while processing this request", error: error.message })
+    }
 })
 
 

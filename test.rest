@@ -1,4 +1,4 @@
-@global = http://localhost:8009
+@global = http://localhost:3000
 
 POST  {{global}}/users/
 Content-Type: application/json
@@ -11,7 +11,7 @@ Content-Type: application/json
     "last": "Vi22s"
   },
   "phone": "0512345567",
-  "email": "Admin@email.com",
+  "email": "Admin2@email.com",
   "password": "Abc!123Abc",
   "image": {
     "url": "",
@@ -25,7 +25,7 @@ Content-Type: application/json
     "houseNumber": 5,
     "zip": "2151510"
   },
-  "isBusiness": false
+  "isBusiness": true
 
 }
 
@@ -36,8 +36,8 @@ POST  {{global}}/users/login
 Content-Type: application/json
 
 {
-  "email": "Admin@email.com",
-  "password": "Abc!123Abc"
+  "email": "nick@gmail.com",
+  "password": "Nick123456!"
 }
 
 ###
@@ -84,13 +84,12 @@ x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc3YTg3MWQ0NzIyZG
 ###
 POST {{global}}/cards/
 Content-Type: application/json
-x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc1MDU1ODU3YTBiMjE5ZWMzYjc0YWIiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM1NzMxNDE2fQ.z3m_rvpwqnDXn2Tbrbw_xmG8E88G2nF9pWbCZBtlOxs
+x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzdkMGE4NjRhOWQ2NDU4YjZhODMyMTkiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM2MjQ3OTUxfQ.3JScaCTWtb0kVWYf1VI4SOIw18ZyelF6Wg1k0fYf4EE
 
 
 {
-  
-  "title": "aaaaaaaaa",
-  "subtitle": "aaaaaaaaaaa",
+  "title": "hellp",
+  "subtitle": "hellp",
   "description": "a test value for new card\na test value for new card\n",
   "phone": "012-3211234",
   "email": "qwe@gmail.com",
@@ -105,7 +104,7 @@ x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc1MDU1ODU3YTBiMj
     "city": "Arad",
     "street": "Shoham",
     "houseNumber": 5,
-    "zip": 8920435
+    "zip": "8920435"
   }
 }
 
@@ -120,9 +119,9 @@ GET {{global}}/cards/677662f9386288dadc184d07
 x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc1MDU1ODU3YTBiMjE5ZWMzYjc0YWIiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM1NzMxNDE2fQ.z3m_rvpwqnDXn2Tbrbw_xmG8E88G2nF9pWbCZBtlOxs
 
 ###
-PUT {{global}}/cards/677662f9386288dadc184d07
+PUT {{global}}/cards/677d0c3d4a9d6458b6a83224
 Content-Type: application/json
-x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc1MDU1ODU3YTBiMjE5ZWMzYjc0YWIiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM1NzMxNDE2fQ.z3m_rvpwqnDXn2Tbrbw_xmG8E88G2nF9pWbCZBtlOxs
+x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzdkMGE4NjRhOWQ2NDU4YjZhODMyMTkiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM2MjQ4MzIxfQ.MIq9cFCq2Zl62ZZ-vIdTIFeAQO9UxbiJ7VtO823vijU
 
 {
 "title": "a wonderful new card updated!",
@@ -141,15 +140,15 @@ x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc1MDU1ODU3YTBiMj
     "city": "Arad",
     "street": "Shoham",
     "houseNumber": 5,
-    "zip": 8920435
+    "zip": "8920435"
   }
 
 }
 
 
 ###
-PATCH {{global}}/cards/677662f9386288dadc184d07
-x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc1MDUyMWRiZjY2YTY4Mzg4Yzk4ZmQiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM1ODA3NTM0fQ.nCuu3MBCE_29GZc3U4_2J8MJs8OI0m0KW35K0yUt1IE
+PATCH {{global}}/cards/677d0c3d4a9d6458b6a83224
+x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzdkMGE4NjRhOWQ2NDU4YjZhODMyMTkiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM2MjQ4MzIxfQ.MIq9cFCq2Zl62ZZ-vIdTIFeAQO9UxbiJ7VtO823vijU
 
 
 ### 
@@ -157,9 +156,9 @@ DELETE {{global}}/cards/677680990e68afb1b5353dad
 x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc1MWFlNzIwMTlkNGZmNDZhOWE1YWIiLCJpc0J1c2luZXNzIjpmYWxzZSwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNzM1ODE5OTg3fQ.VuFG2m5W2ZmOW1m0AWx0HZxM9-g1N__O-LB_KcKDKZs
 
 ### 
-PATCH  {{global}}/cards/biz/677bd2b74ac8717524a6e8be
+PATCH  {{global}}/cards/biz/677d0c3d4a9d6458b6a83224
 Content-Type: application/json
-x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc1MWFlNzIwMTlkNGZmNDZhOWE1YWIiLCJpc0J1c2luZXNzIjpmYWxzZSwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNzM1ODE5OTg3fQ.VuFG2m5W2ZmOW1m0AWx0HZxM9-g1N__O-LB_KcKDKZs
+x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc3YTg0M2Q0NzIyZGU3M2NkMWE5ODMiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MzYyNDg4MzN9.WSEbhbzIYpt5FLlHa12zJTrGQdlnMTZ5uI64k-tuBxY
 
 {
   "bizNumber":1000004

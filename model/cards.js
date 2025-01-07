@@ -1,6 +1,7 @@
 const Joi = require("joi")
 const mongoose = require("mongoose")
 const _ = require("lodash")
+const { emailRegex } = require("../regex/refgex")
 
 const cardsSchema = new mongoose.Schema({
 
@@ -108,7 +109,7 @@ function validateCard(card) {
         subtitle: Joi.string().min(2).max(256).required(),
         description: Joi.string().min(2).max(1024).required(),
         phone: Joi.string().min(9).max(11).required(),
-        email: Joi.string().min(5).required(),
+        email: Joi.string().pattern(emailRegex).message("email must be a standard email").min(5).required(),
         web: Joi.string().min(14),
         image: Joi.object({
             url: Joi.string().min(14),

@@ -1,5 +1,6 @@
 const Joi = require("joi")
 const mongoose = require("mongoose")
+const { emailRegex, passwordRegex } = require("../regex/refgex")
 
 const usersSchema = new mongoose.Schema({
     name: {
@@ -111,8 +112,11 @@ function validateUser(user) {
 
         }),
         phone: Joi.string().min(9).max(11).required(),
-        email: Joi.string().min(5).required(),
-        password: Joi.string().min(7).max(20).required(),
+        email: Joi.string().pattern(emailRegex).message("email must be a standard email").min(5).required(),
+        password: Joi.string().pattern(passwordRegex)
+            .message(
+                "password must be at least nine characters long and contain an uppercase letter, a lowercase letter, a number and one of the following characters !@#$%^&*-"
+            ).min(7).max(20).required(),
         image: Joi.object({
             url: Joi.string().allow("").min(14),
             alt: Joi.string().allow("").min(2).max(256),
@@ -135,8 +139,11 @@ function validateUser(user) {
 
 function validateLogin(credentials) {
     const schema = Joi.object({
-        email: Joi.string().min(5).required(),
-        password: Joi.string().min(7).max(20).required(),
+        email: Joi.string().pattern(emailRegex).message("email must be a standard email").min(5).required(),
+        password: Joi.string().pattern(passwordRegex)
+            .message(
+                "password must be at least nine characters long and contain an uppercase letter, a lowercase letter, a number and one of the following characters !@#$%^&*-"
+            ).min(7).max(20).required(),
     })
     return schema.validate(credentials)
 
