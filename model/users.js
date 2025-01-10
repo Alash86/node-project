@@ -115,7 +115,7 @@ function validateUser(user) {
         email: Joi.string().pattern(emailRegex).message("email must be a standard email").min(5).required(),
         password: Joi.string().pattern(passwordRegex)
             .message(
-                "password must be at least nine characters long and contain an uppercase letter, a lowercase letter, a number and one of the following characters !@#$%^&*-"
+                "password must be at least 7 characters long and contain an uppercase letter, a lowercase letter, a number and one of the following characters !@#$%^&*-"
             ).min(7).max(20).required(),
         image: Joi.object({
             url: Joi.string().allow("").min(14),
