@@ -20,7 +20,7 @@ export const initialusers = [
       city: "Ashdod",
       street: "Ashdod city",
       houseNumber: 10,
-      zip: 12,
+      zip: "12",
     },
   },
   {
@@ -44,7 +44,7 @@ export const initialusers = [
       city: "LA",
       street: "LA city",
       houseNumber: 30,
-      zip: 11,
+      zip: "11",
     },
   },
   {
@@ -68,7 +68,7 @@ export const initialusers = [
       city: "London",
       street: "London city",
       houseNumber: 45,
-      zip: 12,
+      zip: "12",
     },
   },
 ];
