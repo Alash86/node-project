@@ -10,25 +10,22 @@ const { User, validateUser, validateLogin, validatEdit } = require("../model/use
 const { array } = require("joi");
 
 usersRouter.post("/", async (req, res) => {
-    //validate user input
     const { error } = validateUser(req.body)
     if (error) {
         res.status(400).send(error.details[0].message)
         return
     }
 
-    //validate system
     let user = await User.findOne({ email: req.body.email })
     if (user) {
         res.status(400).send("User is already registerd")
         return
     }
-    //process
     user = await new User(req.body)
     user.password = await bcrypt.hash(user.password, 12)
     try {
         await user.save()
-        //response
+
         res.json(_.pick(user, ["name", "email", "_id"]))
     } catch (error) {
         console.log("error occured:", error.message)
@@ -39,29 +36,25 @@ usersRouter.post("/", async (req, res) => {
 
 usersRouter.post("/login", async (req, res) => {
 
-    //validate user input
     const { error } = validateLogin(req.body)
     if (error) {
         res.status(400).send(error.details[0].message)
         return
     }
 
-    //validate system
     const user = await User.findOne({ email: req.body.email })
     if (!user) {
         res.status(400).send("invalid Email")
         return
     }
-    const ValidPass = bcrypt.compare(req.body.password, user.password)
+    const ValidPass = await bcrypt.compare(req.body.password, user.password)
     if (!ValidPass) {
         res.status(400).send("invalid Password")
         return
     }
 
-    //process
     const token = jwt.sign({ _id: user._id, isBusiness: user.isBusiness, isAdmin: user.isAdmin }, config.jwtkey)
 
-    //response
     res.json({ token, })
 })
 
@@ -170,12 +163,5 @@ usersRouter.delete("/:id", authMW, async (req, res) => {
 
 
 })
-
-
-
-
-
-
-
 
 module.exports = usersRouter

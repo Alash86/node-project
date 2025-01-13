@@ -39,21 +39,17 @@ cardsRouter.get("/:id", async (req, res) => {
 
 cardsRouter.post("/", authMW, async (req, res) => {
 
-    //validate input
     const { error } = validateCard(req.body)
     if (error) {
         res.status(400).send(error.details[0].message)
         return
     }
-
-    //validate system
     const isBusiness = req.user.isBusiness
     if (!isBusiness) {
         res.status(400).send("Only Business user can make this request")
         return
     }
 
-    //process
     try {
         const card = await new Card({
             ...req.body,
@@ -61,7 +57,6 @@ cardsRouter.post("/", authMW, async (req, res) => {
             bizNumber: await generateBizNum()
         })
         await card.save()
-        //response
         res.json(card)
 
     } catch (error) {

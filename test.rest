@@ -11,7 +11,7 @@ Content-Type: application/json
     "last": "Vi22s"
   },
   "phone": "0512345567",
-  "email": "Admin2@email.com",
+  "email": "Admin222@hotmail.com",
   "password": "Abc!123Abc",
   "image": {
     "url": "",
@@ -41,21 +41,22 @@ Content-Type: application/json
 }
 
 ###
-GET {{global}}/cards
+GET {{global}}/users
+x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzg0ZDA3MjBjM2RhY2UzNTAyMzliZTIiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MzY3NTg1MTV9.IlEJ1zd_RM0zUH11CwgKKIkJdpVyk_av6l_wOP-9zaA
 ###
 
-GET {{global}}/users/6777a44e279c40ad92792f81
-x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc3YTQ0ZTI3OWM0MGFkOTI3OTJmODAiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MzU4OTQ1MDh9.2NnTNZlSJEQUckIIynBO7er4eZfrW3G_w85a65w8AJ8
+GET {{global}}/users/6784d0720c3dace350239be3
+x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzg0ZDA3MjBjM2RhY2UzNTAyMzliZTIiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MzY3NTg1MTV9.IlEJ1zd_RM0zUH11CwgKKIkJdpVyk_av6l_wOP-9zaA
 ###
-PUT {{global}}/users/6777a44e279c40ad92792f80
+PUT {{global}}/users/6784d0720c3dace350239be3
 Content-Type: application/json
-x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc3YTQ0ZTI3OWM0MGFkOTI3OTJmODAiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MzU4OTQ1ODl9.C-FDkWTPXqjANdvSrKz6IYa9dsIrPoz9uL3OzaJ8VHU
+x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzg0ZDA3MjBjM2RhY2UzNTAyMzliZTMiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM2NzU4NzUyfQ.VyaoMuD2VyfLyGa-9zFdy0uI7lP3S7iY52xaeXXwr78
 
 {
   "name": {
-    "first": "Ell new222",
+    "first": "Ell new222222222222",
     "middle": "",
-    "last": "Vis new2222"
+    "last": "Vis new2222222222222"
   },
   "phone": "0512345567",
   "image": {
@@ -72,19 +73,18 @@ x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc3YTQ0ZTI3OWM0MG
   }
 }
 ###
-PATCH  {{global}}/users/6777a44e279c40ad92792f80
-x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc3YTQ0ZTI3OWM0MGFkOTI3OTJmODAiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MzU4OTQ1ODl9.C-FDkWTPXqjANdvSrKz6IYa9dsIrPoz9uL3OzaJ8VHU
-
+PATCH  {{global}}/users/6784d0720c3dace350239be3
+x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzg0ZDA3MjBjM2RhY2UzNTAyMzliZTMiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM2NzU4NzUyfQ.VyaoMuD2VyfLyGa-9zFdy0uI7lP3S7iY52xaeXXwr78
 
 ###
-DELETE {{global}}/users/6777a871d4722de73cd1a995
-x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc3YTg3MWQ0NzIyZGU3M2NkMWE5OTUiLCJpc0J1c2luZXNzIjpmYWxzZSwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTczNTg5NTE3NX0.5fUWKls45bOloaauKZImKtyvH5NHhJaR22MQvxP4nsI
+DELETE {{global}}/users/6784d30aacf23ae843eeccec
+x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzg0ZDA3MjBjM2RhY2UzNTAyMzliZTIiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MzY3NTg1MTV9.IlEJ1zd_RM0zUH11CwgKKIkJdpVyk_av6l_wOP-9zaA
 
 
 ###
 POST {{global}}/cards/
 Content-Type: application/json
-x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzdkMGE4NjRhOWQ2NDU4YjZhODMyMTkiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM2MjQ3OTUxfQ.3JScaCTWtb0kVWYf1VI4SOIw18ZyelF6Wg1k0fYf4EE
+x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzg0ZDA3MjBjM2RhY2UzNTAyMzliZTMiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM2NzU5MDA0fQ.tgnApx5qcvkMASgcvfFTZF-Zn-qKLYYogtTH8xMYlRY
 
 
 {
@@ -111,17 +111,17 @@ x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzdkMGE4NjRhOWQ2ND
 
 ###
 GET {{global}}/cards/my-cards
-x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc1MDU1ODU3YTBiMjE5ZWMzYjc0YWIiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM1NzMxNDE2fQ.z3m_rvpwqnDXn2Tbrbw_xmG8E88G2nF9pWbCZBtlOxs
+x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzg0ZDA3MjBjM2RhY2UzNTAyMzliZTMiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM2NzU5MDA0fQ.tgnApx5qcvkMASgcvfFTZF-Zn-qKLYYogtTH8xMYlRY
 
 
 ###
-GET {{global}}/cards/677662f9386288dadc184d07
-x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc1MDU1ODU3YTBiMjE5ZWMzYjc0YWIiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM1NzMxNDE2fQ.z3m_rvpwqnDXn2Tbrbw_xmG8E88G2nF9pWbCZBtlOxs
+GET {{global}}/cards/6784d6f35815a7edf21fce81
+
 
 ###
-PUT {{global}}/cards/677d0c3d4a9d6458b6a83224
+PUT {{global}}/cards/6784d6f35815a7edf21fce81
 Content-Type: application/json
-x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzdkMGE4NjRhOWQ2NDU4YjZhODMyMTkiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM2MjQ4MzIxfQ.MIq9cFCq2Zl62ZZ-vIdTIFeAQO9UxbiJ7VtO823vijU
+x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzg0ZDA3MjBjM2RhY2UzNTAyMzliZTMiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM2NzU5MDA0fQ.tgnApx5qcvkMASgcvfFTZF-Zn-qKLYYogtTH8xMYlRY
 
 {
 "title": "a wonderful new card updated!",
@@ -147,18 +147,18 @@ x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzdkMGE4NjRhOWQ2ND
 
 
 ###
-PATCH {{global}}/cards/677d0c3d4a9d6458b6a83224
-x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzdkMGE4NjRhOWQ2NDU4YjZhODMyMTkiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM2MjQ4MzIxfQ.MIq9cFCq2Zl62ZZ-vIdTIFeAQO9UxbiJ7VtO823vijU
+PATCH {{global}}/cards/6784d6f35815a7edf21fce81
+x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzg0ZDA3MjBjM2RhY2UzNTAyMzliZTMiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM2NzU5MDA0fQ.tgnApx5qcvkMASgcvfFTZF-Zn-qKLYYogtTH8xMYlRY
 
 
 ### 
-DELETE {{global}}/cards/677680990e68afb1b5353dad
+DELETE {{global}}/cards/6784d0720c3dace350239bec
 x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc1MWFlNzIwMTlkNGZmNDZhOWE1YWIiLCJpc0J1c2luZXNzIjpmYWxzZSwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNzM1ODE5OTg3fQ.VuFG2m5W2ZmOW1m0AWx0HZxM9-g1N__O-LB_KcKDKZs
 
 ### 
-PATCH  {{global}}/cards/biz/677d0c3d4a9d6458b6a83224
+PATCH  {{global}}/cards/biz/6784d6f35815a7edf21fce81
 Content-Type: application/json
-x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc3YTg0M2Q0NzIyZGU3M2NkMWE5ODMiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MzYyNDg4MzN9.WSEbhbzIYpt5FLlHa12zJTrGQdlnMTZ5uI64k-tuBxY
+x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzg0ZDA3MjBjM2RhY2UzNTAyMzliZTIiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MzY3NTk0NzB9.6KHJXCykniwxGapKpO8xcYyHpi2WG0sDWJLKQgXJdUo
 
 {
   "bizNumber":1000004
